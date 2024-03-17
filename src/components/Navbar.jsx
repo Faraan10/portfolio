@@ -14,7 +14,8 @@ const Navbar = () => {
 	return (
 		<div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
 			<div>
-				<img src="" alt="Logo Image" />
+				{/* <img src="" alt="Logo Image" /> */}
+				<h2 style={{ padding: "5px", fontSize: "25px" }}>PORTFOLIO</h2>
 			</div>
 
 			{/* Below code will be hidden until medium screen size */}
@@ -92,45 +93,38 @@ const Navbar = () => {
 			{/* Social icons */}
 			{/* below code will show from medium devices */}
 			<div className="hidden lg:flex fixed flex-col top-[35%] left-0">
-				<ul>
-					<li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
-						<a
-							className="flex justify-between items-center w-full text-gray-300"
-							href="https://www.linkedin.com/in/muhammed-faraan/"
-							target="_blank"
-						>
-							Linkedin <FaLinkedin size={30} />
-						</a>
-					</li>
-					<li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]">
-						<a
-							className="flex justify-between items-center w-full text-gray-300"
-							href="https://github.com/Faraan10/"
-							target="_blank"
-						>
-							Github <FaGithub size={30} />
-						</a>
-					</li>
-					<li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
-						<a
-							className="flex justify-between items-center w-full text-gray-300"
-							href="mailto:faraanshaik19@gmail.com"
-							target="_blank"
-						>
-							Mail <HiOutlineMail size={30} />
-						</a>
-					</li>
-					<li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
-						<a
-							className="flex justify-between items-center w-full text-gray-300"
-							href="https://drive.google.com/file/d/1uuTDPiTyQ4RqM2Gk_wSx23mdMLAe7wYH/view?usp=sharing"
-							download
-							target="_blank"
-						>
-							Resume <BsFillPersonLinesFill size={30} />
-						</a>
-					</li>
-				</ul>
+				<div className="social-icons-container">
+					<a href="https://www.linkedin.com/in/muhammed-faraan/" target="_blank">
+						<div className="icon">
+							<i className="fa-brands fa-linkedin"></i>
+						</div>
+						<div className="name">LinkedIn</div>
+					</a>
+
+					<a href="https://github.com/Faraan10/" target="_blank">
+						<div className="icon">
+							<i className="fa-brands fa-github"></i>
+						</div>
+						<div className="name">Github</div>
+					</a>
+
+					<a href="mailto:faraanshaik19@gmail.com" target="_blank">
+						<div className="icon">
+							<i className="fa-regular fa-envelope"></i>
+						</div>
+						<div className="name">Mail</div>
+					</a>
+
+					<a href="https://drive.google.com/file/d/1uuTDPiTyQ4RqM2Gk_wSx23mdMLAe7wYH/view?usp=sharing" target="_blank">
+						<div className="icon">
+							<i className="fa-solid fa-file" style={{ marginLeft: "3px" }}></i>
+						</div>
+						<div className="name" style={{ marginLeft: "5px" }}>
+							Resume
+						</div>
+					</a>
+				</div>
+				<br />
 			</div>
 		</div>
 	);
