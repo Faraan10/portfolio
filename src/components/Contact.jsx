@@ -1,27 +1,32 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 const Contact = () => {
-	const [info, setInfo] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+	const form = useRef();
+	const [error, setError] = useState(false);
+	const [success, setSuccess] = useState(false);
 
-	const { name, email, message } = info;
-
-	const handleChange = (e) => {
-		setInfo({ ...info, [e.target.name]: e.target.value });
-	};
-	//console.log(info);
-
-	const handleSubmit = (e) => {
+	const sendEmail = (e) => {
 		e.preventDefault();
-		//console.log(info);
+
+		emailjs
+			.sendForm("service_934ubzi", "template_vldpfvp", form.current, {
+				publicKey: "C0B3tYhh8Bjqs5jXR",
+			})
+			.then(
+				() => {
+					setSuccess(true);
+				},
+				(error) => {
+					setError(true);
+				}
+			);
 	};
 
 	return (
 		<div name="contact" className="w-full h-full bg-[#0a192f] flex justify-center items-center p-4">
-			<form className="flex flex-col max-w-[600px] w-full" onSubmit={handleSubmit}>
+			<form className="flex flex-col max-w-[600px] w-full" id="demo_form" ref={form} onSubmit={sendEmail}>
 				<div className="pb-8">
 					<p className="text-4xl font-bold inline border-b-4 border-cyan-300 text-gray-300">Contact</p>
 				</div>
@@ -29,25 +34,25 @@ const Contact = () => {
 					className="bg-[#ccd6f6] p-2"
 					type="text"
 					placeholder="Name"
+					required
 					name="name"
-					value={name}
-					onChange={handleChange}
+					style={{ borderRadius: "4px" }}
 				/>
 				<input
 					className="my-4 p-2 bg-[#ccd6f6]"
 					type="email"
 					placeholder="Email"
+					required
 					name="email"
-					value={email}
-					onChange={handleChange}
+					style={{ borderRadius: "4px" }}
 				/>
 				<textarea
 					className="bg-[#ccd6f6] p-2"
 					name="message"
-					rows="10"
+					rows="8"
+					required
 					placeholder="Message"
-					value={message}
-					onChange={handleChange}
+					style={{ borderRadius: "4px" }}
 				></textarea>
 				<button
 					type="submit"
@@ -55,6 +60,8 @@ const Contact = () => {
 				>
 					Let's Connect
 				</button>
+				{error && toast.error("Error")}
+				{success && toast.success("Mail Sent")}
 			</form>
 		</div>
 	);
