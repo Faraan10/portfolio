@@ -16,7 +16,7 @@ export const projects = [
     name: "Ecommerce Application",
     image: Ecommerce,
     github: "https://github.com/Faraan10/Ecommerce_Frontend",
-    live: "https://ecommerce-frontend-iqxge5zev-muhammed-faraans-projects.vercel.app/",
+    live: "https://www.themultihub.shop/",
   },
   {
     id: 3,
