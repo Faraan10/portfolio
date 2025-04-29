@@ -14,6 +14,7 @@ import DAISY from "../assets/daisy.png";
 import WEBFLOW from "../assets/webflow.webp";
 import BOOTSTRAP from "../assets/bootstrap.png";
 import MATERIALUI from "../assets/materialui.png";
+import CHAKRA from "../assets/chakra.png";
 
 const Skills = () => {
   return (
@@ -94,6 +95,10 @@ const Skills = () => {
               alt="MATERIALUI icon"
             />
             <p className="my-4">MATERIAL UI</p>
+          </div>
+          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
+            <img className="w-20 mx-auto" src={CHAKRA} alt="Chakra icon" />
+            <p className="my-4">CHAKRA UI</p>
           </div>
         </div>
       </div>
