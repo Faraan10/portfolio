@@ -6,16 +6,16 @@ import Work from "./components/Work";
 import Contact from "./components/Contact";
 
 function App() {
-	return (
-		<>
-			<Navbar />
-			<Home />
-			<About />
-			<Skills />
-			<Work />
-			<Contact />
-		</>
-	);
+  return (
+    <>
+      <Navbar />
+      <Home />
+      <About />
+      <Skills />
+      <Work />
+      <Contact />
+    </>
+  );
 }
 
 export default App;
